@@ -4,20 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sakshi Verma | AI/ML Engineer</title>
+  <title>Sakshi Verma | AI/ML Portfolio</title>
 
   <!-- SEO Meta Tags -->
-  <meta name="description"
-    content="Portfolio of Sakshi Verma, an AI/ML Engineer and Data Scientist, showcasing deep learning architectures, data visualization, and immersive WebGL interfaces.">
+  <meta name="description" content="Portfolio of Sakshi Verma, an AI/ML Engineer and Data Scientist, showcasing deep learning architectures, data visualization, and immersive WebGL interfaces.">
   <meta name="keywords" content="Sakshi Verma, AI, ML, Portfolio, Data Scientist, Three.js, WebGL, Developer, PyTorch">
   <meta name="author" content="Sakshi Verma">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,19 +31,17 @@
       --bg-color: #050505;
       --text-primary: #ffffff;
       --text-secondary: #8a8f98;
-      --accent-pink: #ff5bce;
-      /* Custom Coral Pink #ff6954 */
-      --accent-pink-rgb: 255, 105, 84;
-      /* rgb values for #ff6954 */
-      --accent-purple: #a259ff;
+      --accent-pink: #ff0080;          /* Neon Pink */
+      --accent-pink-rgb: 255, 0, 127; 
+      --accent-purple: #cd72f4;
       --accent-purple-gradient: linear-gradient(135deg, #a259ff, #5d2bcf);
-      --progress-bar-gradient: linear-gradient(90deg, #a259ff, #7f00ff);
+      --progress-bar-gradient: linear-gradient(90deg, #ff007f, #a259ff);
       --font-title: 'Poppins', sans-serif;
       --font-body: 'Inter', sans-serif;
       --font-mono: 'Fira Code', monospace;
-      --glass-bg: rgba(10, 10, 10, 0.55);
+      --glass-bg: rgba(10, 10, 10, 0.65);
       --glass-border: rgba(255, 255, 255, 0.08);
-      --pink-glow: 0 0 15px rgb(255, 111, 243), 0 0 35px rgba(255, 105, 84, 0.15);
+      --pink-glow: 0 0 15px rgba(255, 0, 127, 0.6), 0 0 30px rgba(255, 0, 127, 0.2);
       --purple-glow: 0 0 15px rgba(162, 89, 255, 0.3), 0 0 35px rgba(162, 89, 255, 0.1);
       --transition-speed: 0.3s;
     }
@@ -69,19 +64,19 @@
       line-height: 1.6;
     }
 
-    /* Custom Pink Scrollbars */
+    /* Custom Neon Pink Scrollbars */
     ::-webkit-scrollbar {
       width: 8px;
     }
-
+    
     ::-webkit-scrollbar-track {
       background: var(--bg-color);
     }
-
+    
     ::-webkit-scrollbar-thumb {
       background: var(--accent-pink);
       border-radius: 4px;
-      box-shadow: 0 0 10px var(--accent-pink);
+      box-shadow: var(--pink-glow);
     }
 
     /* Core container centering */
@@ -135,7 +130,226 @@
     }
 
     /* ----------------------------------------------------
-       2. NAVIGATION BAR
+       2. GRADIENT DESCENT CHALLENGE GATEKEEPER OVERLAY
+       ---------------------------------------------------- */
+    #gatekeeper-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 99999;
+      background: rgba(5, 5, 5, 0.7);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .gatekeeper-card {
+      background: rgba(10, 10, 10, 0.85);
+      border: 1px solid var(--accent-pink);
+      box-shadow: var(--pink-glow);
+      border-radius: 20px;
+      max-width: 800px;
+      width: 100%;
+      padding: 40px;
+      font-family: var(--font-body);
+      position: relative;
+    }
+
+    .jupyter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--glass-border);
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+
+    .jupyter-cell-num {
+      font-family: var(--font-mono);
+      color: var(--accent-pink);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .jupyter-status-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: rgba(255, 0, 127, 0.1);
+      border: 1px solid var(--accent-pink);
+      color: var(--accent-pink);
+      padding: 4px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.15);
+    }
+
+    .gatekeeper-title {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .gatekeeper-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    .game-viewport {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 768px) {
+      .game-viewport {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .canvas-container-game {
+      background: #000;
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      position: relative;
+      aspect-ratio: 1.6 / 1;
+      width: 100%;
+    }
+
+    #game-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .game-console {
+      background: #000;
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #00ff66;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 200px;
+    }
+
+    .console-logs {
+      overflow-y: auto;
+      max-height: 150px;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .console-line {
+      margin-bottom: 8px;
+    }
+
+    .console-input-row {
+      border-top: 1px solid var(--glass-border);
+      padding-top: 15px;
+    }
+
+    .slider-container {
+      margin-bottom: 20px;
+    }
+
+    .slider-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .slider-label-row span.lr-val {
+      color: var(--accent-pink);
+      font-weight: 700;
+    }
+
+    .lr-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255, 255, 255, 0.1);
+      outline: none;
+    }
+
+    .lr-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--accent-pink);
+      cursor: pointer;
+      box-shadow: var(--pink-glow);
+      transition: transform var(--transition-speed);
+    }
+
+    .lr-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    .game-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .game-btn {
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-family: var(--font-title);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all var(--transition-speed);
+      border: none;
+    }
+
+    .game-btn-step {
+      background: var(--accent-pink);
+      color: #fff;
+      box-shadow: var(--pink-glow);
+      flex: 1;
+    }
+
+    .game-btn-step:hover {
+      box-shadow: 0 0 25px rgba(255, 0, 127, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .game-btn-bypass {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid var(--glass-border);
+    }
+
+    .game-btn-bypass:hover {
+      color: #fff;
+      border-color: var(--accent-pink);
+      box-shadow: var(--pink-glow);
+    }
+
+    /* ----------------------------------------------------
+       3. NAVIGATION BAR
        ---------------------------------------------------- */
     header {
       position: fixed;
@@ -214,7 +428,6 @@
       width: 100%;
     }
 
-    /* Mobile hamburger menu button */
     .menu-toggle {
       display: none;
       font-size: 1.5rem;
@@ -225,7 +438,7 @@
     }
 
     /* ----------------------------------------------------
-       3. HERO SECTION ( strictly matching image_371f63.jpg )
+       4. HERO SECTION
        ---------------------------------------------------- */
     .hero-container {
       display: grid;
@@ -276,7 +489,6 @@
       max-width: 580px;
     }
 
-    /* Social Links Row */
     .social-row {
       display: flex;
       gap: 15px;
@@ -295,7 +507,7 @@
       font-size: 1.1rem;
       text-decoration: none;
       background: transparent;
-      box-shadow: 0 0 5px rgba(255, 105, 84, 0.1);
+      box-shadow: 0 0 5px rgba(255, 0, 127, 0.1);
       transition: all var(--transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
@@ -306,7 +518,6 @@
       transform: translateY(-3px);
     }
 
-    /* Action Buttons Row */
     .btn-row {
       display: flex;
       flex-wrap: wrap;
@@ -336,23 +547,22 @@
 
     .pill-btn-solid:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 25px rgba(255, 105, 84, 0.6);
+      box-shadow: 0 0 25px rgba(255, 0, 127, 0.6);
     }
 
     .pill-btn-outline {
       background-color: transparent;
       color: #fff;
       border: 1.5px solid var(--accent-pink);
-      box-shadow: 0 0 5px rgba(255, 105, 84, 0.1);
+      box-shadow: 0 0 5px rgba(255, 0, 127, 0.1);
     }
 
     .pill-btn-outline:hover {
-      background-color: rgba(255, 105, 84, 0.05);
+      background-color: rgba(255, 0, 127, 0.05);
       box-shadow: var(--pink-glow);
       transform: translateY(-2px);
     }
 
-    /* Right column portrait styling */
     .hero-media {
       display: flex;
       justify-content: center;
@@ -360,25 +570,21 @@
       position: relative;
     }
 
-    /* Animated Atmospheric nebula element using deep purple shades */
     .nebula-bg {
       position: absolute;
       width: 480px;
       height: 480px;
-      background: radial-gradient(circle, rgba(162, 89, 255, 0.16) 0%, rgba(93, 43, 207, 0.04) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(162, 89, 255, 0.16) 0%, rgba(255, 0, 127, 0.04) 50%, transparent 70%);
       border-radius: 50%;
       filter: blur(10px);
       pointer-events: none;
-      animation: drift 15s infinite ease-in-out alternate;
     }
 
-    /* Portrait frame styled with purple gradient; glows intense custom pink on hover */
     .portrait-frame {
       width: 320px;
       height: 320px;
       border-radius: 50%;
       background: var(--accent-purple-gradient);
-      /* Purple-only gradient */
       padding: 4px;
       display: flex;
       align-items: center;
@@ -391,7 +597,7 @@
 
     .portrait-frame:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 35px var(--accent-pink), 0 0 70px rgba(255, 105, 84, 0.6);
+      box-shadow: 0 0 35px var(--accent-pink), 0 0 70px rgba(255, 0, 127, 0.6);
     }
 
     .portrait-image {
@@ -403,7 +609,7 @@
     }
 
     /* ----------------------------------------------------
-       4. JOURNEY SECTION (Timeline)
+       5. JOURNEY SECTION
        ---------------------------------------------------- */
     .timeline-container {
       max-width: 900px;
@@ -411,7 +617,6 @@
       position: relative;
     }
 
-    /* Central vertical line styled with purple gradient */
     .timeline-line {
       position: absolute;
       left: 50%;
@@ -419,7 +624,6 @@
       bottom: 0;
       width: 2px;
       background: var(--accent-purple-gradient);
-      /* Purple-only gradient */
       transform: translateX(-50%);
     }
 
@@ -430,6 +634,14 @@
       width: 100%;
       margin-bottom: 60px;
       position: relative;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .timeline-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .timeline-item:nth-child(even) {
@@ -447,14 +659,12 @@
       transition: all var(--transition-speed) ease;
     }
 
-    /* Glowing outline and lift on hovering timeline cards */
     .timeline-content:hover {
       transform: translateY(-3px);
       border-color: var(--accent-pink);
-      box-shadow: 0 0 20px rgba(255, 105, 84, 0.25);
+      box-shadow: 0 0 20px rgba(255, 0, 127, 0.25);
     }
 
-    /* Glowing indicator node on the timeline line */
     .timeline-dot {
       position: absolute;
       left: 50%;
@@ -475,8 +685,8 @@
     }
 
     .timeline-item.active .timeline-content {
-      border-color: rgba(255, 105, 84, 0.35);
-      box-shadow: 0 10px 25px rgba(255, 105, 84, 0.08);
+      border-color: rgba(255, 0, 127, 0.35);
+      box-shadow: 0 10px 25px rgba(255, 0, 127, 0.08);
     }
 
     .timeline-date {
@@ -523,14 +733,13 @@
     }
 
     /* ----------------------------------------------------
-       5. SKILLS SECTION ( strictly matching image_3718d7.jpg )
+       6. SKILLS SECTION
        ---------------------------------------------------- */
     .skills-grid {
       display: flex;
       gap: 20px;
       width: 100%;
       align-items: flex-start;
-      /* prevents other cards from stretching */
     }
 
     .skill-card {
@@ -542,14 +751,13 @@
       border-radius: 16px;
       padding: 35px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: transform var(--transition-speed) ease,
-        border-color var(--transition-speed) ease;
+      transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
       height: auto;
     }
 
     .skill-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(255, 105, 84, 0.25);
+      border-color: rgba(255, 0, 127, 0.25);
     }
 
     .skill-card-title {
@@ -587,7 +795,6 @@
       color: var(--text-primary);
     }
 
-    /* Progress bar track */
     .progress-track {
       width: 100%;
       height: 6px;
@@ -597,23 +804,19 @@
       position: relative;
     }
 
-    /* Progress bar fill styled with deep purple gradient */
     .progress-fill {
       position: absolute;
       top: 0;
       left: 0;
       height: 100%;
       width: 0%;
-      /* Animated dynamically via JS */
       background: var(--progress-bar-gradient);
-      /* Purple-only gradient */
       border-radius: 10px;
+      transition: width 1.5s cubic-bezier(0.1, 0.8, 0.2, 1);
     }
 
-
-
     /* ----------------------------------------------------
-       6. PROJECTS SECTION (Swiper Continuous Slider)
+       7. PROJECTS SECTION
        ---------------------------------------------------- */
     .projects-container {
       width: 100%;
@@ -623,10 +826,8 @@
 
     .projects-swiper {
       width: 100%;
-      padding-bottom: 30px !important;
+      padding-bottom: 40px !important;
     }
-
-
 
     .project-slide-card {
       background: var(--glass-bg);
@@ -635,87 +836,18 @@
       border: 1px solid var(--glass-border);
       border-radius: 16px;
       padding: 30px;
-      min-height: 380px;
+      min-height: 400px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: all var(--transition-speed) ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .projects-container .swiper-button-prev,
-    .projects-container .swiper-button-next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--accent-pink);
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      transition: all var(--transition-speed) ease;
-      z-index: 10;
-      margin-top: 0;
-    }
-
-    .projects-container .swiper-button-prev {
-      left: -25px;
-    }
-
-    .projects-container .swiper-button-next {
-      right: -25px;
-    }
-
-    .projects-container .swiper-button-prev:hover,
-    .projects-container .swiper-button-next:hover {
-      background: var(--accent-pink);
-      color: #fff;
-      border-color: var(--accent-pink);
-      box-shadow: var(--pink-glow);
-      transform: translateY(-50%) scale(1.05);
-    }
-
-    .projects-container .swiper-button-prev::after,
-    .projects-container .swiper-button-next::after {
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    @media (max-width: 1280px) {
-      .projects-container .swiper-button-prev {
-        left: -10px;
-      }
-
-      .projects-container .swiper-button-next {
-        right: -10px;
-      }
-    }
-
-    @media (max-width: 768px) {
-
-      .projects-container .swiper-button-prev,
-      .projects-container .swiper-button-next {
-        width: 40px;
-        height: 40px;
-      }
-
-      .projects-container .swiper-button-prev {
-        left: 5px;
-      }
-
-      .projects-container .swiper-button-next {
-        right: 5px;
-      }
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
 
     .project-slide-card:hover {
       border-color: var(--accent-pink);
       transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(255, 105, 84, 0.25);
+      box-shadow: 0 0 20px rgba(255, 0, 127, 0.25);
     }
 
     .proj-header {
@@ -782,14 +914,73 @@
       color: var(--text-secondary);
     }
 
-    /* Custom Swiper Controls styling to match theme */
-    .swiper-pagination {
-      display: none;
-      /* Hide pagination dots for clean continuous scrolling ticker look */
+    .projects-container .swiper-button-prev,
+    .projects-container .swiper-button-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--accent-pink);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: all var(--transition-speed) ease;
+      z-index: 10;
+      margin-top: 0;
+    }
+
+    .projects-container .swiper-button-prev {
+      left: -25px;
+    }
+
+    .projects-container .swiper-button-next {
+      right: -25px;
+    }
+
+    .projects-container .swiper-button-prev:hover,
+    .projects-container .swiper-button-next:hover {
+      background: var(--accent-pink);
+      color: #fff;
+      border-color: var(--accent-pink);
+      box-shadow: var(--pink-glow);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .projects-container .swiper-button-prev::after,
+    .projects-container .swiper-button-next::after {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    @media (max-width: 1280px) {
+      .projects-container .swiper-button-prev {
+        left: -10px;
+      }
+      .projects-container .swiper-button-next {
+        right: -10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .projects-container .swiper-button-prev,
+      .projects-container .swiper-button-next {
+        width: 40px;
+        height: 40px;
+      }
+      .projects-container .swiper-button-prev {
+        left: 5px;
+      }
+      .projects-container .swiper-button-next {
+        right: 5px;
+      }
     }
 
     /* ----------------------------------------------------
-       7. CONTACT SECTION REDESIGN
+       8. CONTACT SECTION REDESIGN
        ---------------------------------------------------- */
     .contact-wrapper {
       max-width: 1000px;
@@ -811,7 +1002,7 @@
     }
 
     .contact-card:hover {
-      border-color: rgba(255, 105, 84, 0.25);
+      border-color: rgba(255, 0, 127, 0.25);
     }
 
     .contact-info-col {
@@ -861,14 +1052,14 @@
       width: 45px;
       height: 45px;
       border-radius: 12px;
-      background: rgba(255, 105, 84, 0.08);
-      border: 1px solid rgba(255, 105, 84, 0.2);
+      background: rgba(255, 0, 127, 0.08);
+      border: 1px solid rgba(255, 0, 127, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       color: var(--accent-pink);
       font-size: 1.2rem;
-      box-shadow: 0 0 10px rgba(255, 105, 84, 0.05);
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.05);
       transition: all var(--transition-speed) ease;
     }
 
@@ -916,16 +1107,6 @@
       border-left: 1px solid var(--glass-border);
     }
 
-    .contact-image-wrapper {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      min-height: 300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
     .contact-portrait-frame {
       width: 250px;
       height: 250px;
@@ -942,7 +1123,7 @@
 
     .contact-portrait-frame:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 35px var(--accent-pink), 0 0 70px rgba(255, 105, 84, 0.6);
+      box-shadow: 0 0 35px var(--accent-pink), 0 0 70px rgba(255, 0, 127, 0.6);
     }
 
     .contact-portrait-image {
@@ -957,28 +1138,11 @@
       position: absolute;
       width: 350px;
       height: 350px;
-      background: radial-gradient(circle, rgba(255, 105, 84, 0.12) 0%, rgba(162, 89, 255, 0.03) 50%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 0, 127, 0.12) 0%, rgba(162, 89, 255, 0.03) 50%, transparent 70%);
       border-radius: 50%;
       filter: blur(10px);
       pointer-events: none;
       z-index: 1;
-    }
-
-    /* ----------------------------------------------------
-       8. ANIMATIONS & EFFECTS
-       ---------------------------------------------------- */
-    @keyframes drift {
-      0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-      }
-
-      50% {
-        transform: translate(30px, -20px) scale(1.1) rotate(180deg);
-      }
-
-      100% {
-        transform: translate(-20px, 30px) scale(0.95) rotate(360deg);
-      }
     }
 
     /* ----------------------------------------------------
@@ -1002,7 +1166,6 @@
 
       .hero-media {
         order: -1;
-        /* image on top for mobile */
       }
 
       .portrait-frame {
@@ -1016,12 +1179,8 @@
       }
 
       .skills-grid {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         gap: 20px;
-      }
-
-      .cert-grid {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -1079,11 +1238,9 @@
       .contact-card {
         grid-template-columns: 1fr;
       }
-
       .contact-info-col {
         padding: 35px 25px;
       }
-
       .contact-image-col {
         border-left: none;
         border-top: 1px solid var(--glass-border);
@@ -1100,7 +1257,8 @@
     <canvas id="bg-canvas"></canvas>
   </div>
 
-  <!-- 1. FIXED NAVIGATION BAR -->
+
+  <!-- FIXED NAVIGATION BAR -->
   <header>
     <div class="nav-container">
       <a href="#home" class="logo">Sakshi <span>Verma</span></a>
@@ -1117,34 +1275,27 @@
     </div>
   </header>
 
-  <!-- 2. HERO SECTION -->
+  <!-- HERO SECTION -->
   <section id="home">
     <div class="container">
       <div class="hero-container">
-
-        <!-- Left Content -->
+        
+        <!-- Left Column -->
         <div class="hero-content">
           <h1 class="hero-greeting">Hey! It's me <span>Sakshi</span></h1>
           <div class="hero-typed">I am a <span id="typed-element"></span></div>
           <p class="hero-desc">
-            AI & Machine Learning student with hands-on experience building AI applications, data pipelines, and
-            serverless automation systems. Skilled in Python, SQL, machine learning, and cloud technologies, with a
-            track record of improving data retrieval accuracy, automating workflows, and solving complex engineering
-            challenges.
+            A curious mind with a creative streak, always exploring new ways to bring ideas to life. I enjoy connecting the dots between imagination and execution, turning thoughts into things. I thrive on learning, building, and creating things that make an impact (and maybe a neon glow).
           </p>
-
+          
           <!-- Social Icons Outline Row -->
           <div class="social-row">
-            <a href="https://linkedin.com/in/sakshivermasv" target="_blank" class="social-icon"
-              aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/SakshiVerma-19" target="_blank" class="social-icon"
-              aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-            <a href="https://sakshiverma19-portfolio.vercel.app/" target="_blank" class="social-icon"
-              aria-label="Personal Portfolio"><i class="fa-solid fa-globe"></i></a>
-            <a href="mailto:sakshi.ve@outlook.com" class="social-icon" aria-label="Send Email"><i
-                class="fa-regular fa-envelope"></i></a>
+            <a href="https://linkedin.com/in/sakshivermasv" target="_blank" class="social-icon" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/SakshiVerma-19" target="_blank" class="social-icon" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+            <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="YouTube Channel"><i class="fa-brands fa-youtube"></i></a>
           </div>
-
+          
           <!-- Action Button Pills -->
           <div class="btn-row">
             <a href="assets/sakshi-resume.pdf" class="pill-btn pill-btn-outline">Download Resume</a>
@@ -1157,7 +1308,7 @@
         <div class="hero-media">
           <div class="nebula-bg"></div>
           <div class="portrait-frame">
-            <img src="sakshi.png" alt="Sakshi Verma Portrait Avatar" class="portrait-image" />
+            <img src="assets/sakshi.png" alt="Sakshi Verma Portrait" class="portrait-image" />
           </div>
         </div>
 
@@ -1165,26 +1316,26 @@
     </div>
   </section>
 
-  <!-- 3. JOURNEY SECTION -->
+  <!-- JOURNEY SECTION -->
   <section id="journey">
     <div class="container">
       <h2 class="section-title">My <span>Journey</span></h2>
-
+      
       <div class="timeline-container">
         <div class="timeline-line"></div>
-
-        <!-- Milestone 1: ISRO -->
+        
+        <!-- Milestone 1 -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-date">2022 - 2027</div>
             <h3 class="timeline-title">BE in Artificial Intelligence & Machine Learning</h3>
             <div class="timeline-institution">Cambridge Institute of Technology</div>
-            <p class="timeline-desc">CGPA: 8.82 / 10.0. Awarded the Academic Excellence Medal by the institution for
-              academic excellence.</p>
+            <p class="timeline-desc">CGPA: 8.82 / 10.0. Awarded the Academic Excellence Medal by the institution for academic excellence.</p>
           </div>
         </div>
 
+        <!-- Milestone 2 -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
@@ -1192,50 +1343,46 @@
             <h3 class="timeline-title">System Engineering & Data Analytics Intern</h3>
             <div class="timeline-institution">ISRO (Indian Space Research Organisation)</div>
             <ul class="timeline-bullets">
-              <li>Developed geospatial intelligence models using satellite imagery and terrain data to assess urban
-                flood vulnerability in metropolitan regions.</li>
-              <li>Managed real-time AWS IoT Core sensor data pipelines, performing data validation, monitoring, and
-                exception handling to ensure reliable data flow.</li>
+              <li>Developed geospatial intelligence models using satellite imagery and terrain data to assess urban flood vulnerability in metropolitan regions.</li>
+              <li>Managed real-time AWS IoT Core data streams, running validation and monitoring pipelines to guarantee seamless flow.</li>
             </ul>
           </div>
         </div>
 
+        <!-- Milestone 3 -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-date">2023-2024</div>
+            <div class="timeline-date">2023 - 2024</div>
             <h3 class="timeline-title">AR Creator</h3>
             <div class="timeline-institution">Under25</div>
             <ul class="timeline-bullets">
-              <li>Created Snapchat AR lenses that achieved 200M+ views, earned platform payouts, and received a Letter
-                of Recommendation from Under 25 for creative excellence and community impact.</li>
+              <li>Created Snapchat AR lenses that achieved 200M+ views, earned platform payouts, and received a Letter of Recommendation from Under 25 for creative excellence.</li>
             </ul>
           </div>
         </div>
-
+        
+        <!-- Milestone 4 -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <div class="timeline-date">Mar 2025-Sep 2025</div>
+            <div class="timeline-date">Mar 2025 - Sep 2025</div>
             <h3 class="timeline-title">Intern</h3>
             <div class="timeline-institution">Galactic 3D</div>
             <ul class="timeline-bullets">
-              <li>Responsible for managing social media platforms, creating engaging content and posts, curating content
-                calendars, and coordinating intern activities to support marketing campaigns and audience growth.</li>
+              <li>Responsible for managing social media platforms, creating engaging content and posts, and coordinating intern activities.</li>
             </ul>
           </div>
         </div>
 
-
-        <!-- Milestone 4: NCC Air Wing -->
+        <!-- Milestone 5 -->
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
             <div class="timeline-date">2023 - 2026</div>
             <h3 class="timeline-title">NCC Air Wing 'C' Certificate Holder</h3>
             <div class="timeline-institution">National Cadet Corps (Air Wing)</div>
-            <p class="timeline-desc">Acquired leadership, discipline, and training in aviation, airmanship, and civic
-              administration as an active Air Wing cadet.</p>
+            <p class="timeline-desc">Acquired leadership, discipline, and training in aviation, airmanship, and civic administration as an active Air Wing cadet.</p>
           </div>
         </div>
 
@@ -1243,183 +1390,131 @@
     </div>
   </section>
 
-  <!-- 4. SKILLS SECTION -->
+  <!-- SKILLS SECTION -->
   <section id="skills">
     <div class="container">
       <h2 class="section-title">Technical <span>Skills</span></h2>
-
+      
       <div class="skills-grid">
-
+        
         <!-- Card 1: Programming Languages -->
         <div class="skill-card">
           <h3 class="skill-card-title"><i class="fa-solid fa-code"></i> Languages</h3>
-
+          
           <div class="progress-item">
             <div class="progress-label-row"><span>Python</span><span>95%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="95%"></div>
-            </div>
+            <div class="progress-track"><div class="progress-fill" data-width="95%"></div></div>
           </div>
-
+          
           <div class="progress-item">
             <div class="progress-label-row"><span>SQL</span><span>90%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="90%"></div>
-            </div>
+            <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
           </div>
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>Java & C++</span><span>80%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80%"></div>
-            </div>
+            <div class="progress-label-row"><span>JavaScript</span><span>85%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
           </div>
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>R </span><span>80%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80%"></div>
-            </div>
-          </div>
-
-          <div class="progress-item">
-            <div class="progress-label-row"><span>JavaScript</span><span>80%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80%"></div>
-            </div>
+            <div class="progress-label-row"><span>R</span><span>80%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="80%"></div></div>
           </div>
         </div>
-
-
 
         <!-- Card 2: AI/ML Frameworks -->
         <div class="skill-card">
           <h3 class="skill-card-title"><i class="fa-solid fa-brain"></i> AI/ML Frameworks</h3>
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>PyTorch & TensorFlow</span><span>90%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="90%"></div>
-            </div>
+            <div class="progress-label-row"><span>TensorFlow</span><span>90%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label-row"><span>PyTorch</span><span>85%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label-row"><span>Scikit-learn</span><span>95%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="95%"></div></div>
           </div>
 
           <div class="progress-item">
-            <div class="progress-label-row"><span>Scikit-learn & SciPy</span><span>95%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="95%"></div>
-            </div>
-          </div>
-
-          <div class="progress-item">
-            <div class="progress-label-row"><span>OpenCV (Computer Vision)</span><span>70%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="70%"></div>
-            </div>
-          </div>
-
-          <div class="progress-item">
-            <div class="progress-label-row"><span>Pandas, NumPy & HuggingFace</span><span>90%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="90%"></div>
-            </div>
+            <div class="progress-label-row"><span>HuggingFace</span><span>88%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="88%"></div></div>
           </div>
         </div>
 
-        <!-- Card 3: Databases & Data Engineering -->
+        <!-- Card 3: Databases & Visualizations -->
         <div class="skill-card">
-          <h3 class="skill-card-title"><i class="fa-solid fa-database"></i> Data & Databases</h3>
+          <h3 class="skill-card-title"><i class="fa-solid fa-chart-simple"></i> Data & Visualization</h3>
 
           <div class="progress-item">
-            <div class="progress-label-row"><span>Microsoft SQL Server & DBMS</span><span>90%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="90%"></div>
-            </div>
+            <div class="progress-label-row"><span>Pandas</span><span>95%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="95%"></div></div>
           </div>
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>Astra DB (Vector Database)</span><span>80%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80%"></div>
-            </div>
+            <div class="progress-label-row"><span>NumPy</span><span>90%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
           </div>
-
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>ETL Data Processing</span><span>75%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="75%"></div>
-            </div>
+            <div class="progress-label-row"><span>Power BI</span><span>90%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
           </div>
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>Power BI & Tableau</span><span>95%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="95%"></div>
-            </div>
+            <div class="progress-label-row"><span>Matplotlib</span><span>85%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
           </div>
         </div>
 
-        <!-- Card 4: Developer Tools & Platforms -->
+        <!-- Card 4: Tools & Platforms -->
         <div class="skill-card">
           <h3 class="skill-card-title"><i class="fa-solid fa-screwdriver-wrench"></i> Tools & Platforms</h3>
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>Git & Version Control</span><span>80%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80%"></div>
-            </div>
+            <div class="progress-label-row"><span>Git</span><span>90%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="90%"></div></div>
           </div>
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>Docker & Containers</span><span>75%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="75%"></div>
-            </div>
+            <div class="progress-label-row"><span>Flask</span><span>85%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
           </div>
-
+          
           <div class="progress-item">
-            <div class="progress-label-row"><span>n8n (Workflows) & Webhooks</span><span>70%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="70%"></div>
-            </div>
-          </div>
-
-          <div class="progress-item">
-            <div class="progress-label-row"><span>GCP, AWS IoT Core & CI/CD</span><span>80%</span></div>
-            <div class="progress-track">
-              <div class="progress-fill" data-width="80%"></div>
-            </div>
+            <div class="progress-label-row"><span>Docker</span><span>80%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="80%"></div></div>
           </div>
         </div>
-
-
 
       </div>
     </div>
   </section>
 
-  <!-- 5. PROJECTS SECTION -->
+  <!-- PROJECTS SECTION -->
   <section id="projects">
     <div class="container">
       <h2 class="section-title">Selected <span>Projects</span></h2>
-
+      
       <div class="projects-container">
         <div class="swiper projects-swiper">
           <div class="swiper-wrapper">
-
-            <!-- Project Slide 1: DocuMend -->
+            
+            <!-- Project 1: DocuMend -->
             <div class="swiper-slide">
               <div class="project-slide-card">
                 <div class="proj-header">
                   <span class="proj-category">LangChain | Astra DB</span>
-                  <a href="https://github.com/SakshiVerma-19/DocuMend" target="_blank" class="proj-icon-link"
-                    aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://github.com/SakshiVerma-19/DocuMend" target="_blank" class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
                 </div>
                 <div>
                   <h3 class="proj-title">DocuMend QA System</h3>
-                  <p class="proj-desc">Developed an automated ETL pipeline for processing unstructured data and built an
-                    interactive Streamlit QA interface. Implemented recursive semantic chunking reducing irrelevant
-                    context by ~30% and achieving 20% higher retrieval accuracy.</p>
+                  <p class="proj-desc">Developed an automated ETL pipeline for processing unstructured data and built an interactive Streamlit QA interface. Implemented recursive semantic chunking reducing irrelevant context by ~30% and achieving 20% higher retrieval accuracy.</p>
                 </div>
                 <div class="proj-tags-container">
                   <span class="proj-tag">Gemini 2.5 Flash</span>
@@ -1430,19 +1525,16 @@
               </div>
             </div>
 
-            <!-- Project Slide 2: Pitch Perfect -->
+            <!-- Project 2: Pitch Perfect -->
             <div class="swiper-slide">
               <div class="project-slide-card">
                 <div class="proj-header">
                   <span class="proj-category">n8n | Serverless Automation</span>
-                  <a href="https://github.com/SakshiVerma-19/ai-outreach-automation-n8n" target="_blank"
-                    class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://github.com/SakshiVerma-19/ai-outreach-automation-n8n" target="_blank" class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
                 </div>
                 <div>
                   <h3 class="proj-title">Pitch Perfect Outreach</h3>
-                  <p class="proj-desc">Built a serverless prospect-research pipeline using n8n, web scraping, and API
-                    integrations. Automates company intelligence gathering and tech-stack analysis to generate custom
-                    drafts, cutting research time by 90%.</p>
+                  <p class="proj-desc">Built a serverless prospect-research pipeline using n8n, web scraping, and API integrations. Automates company intelligence gathering and tech-stack analysis to generate custom drafts, cutting research time by 90%.</p>
                 </div>
                 <div class="proj-tags-container">
                   <span class="proj-tag">n8n</span>
@@ -1453,19 +1545,16 @@
               </div>
             </div>
 
-            <!-- Project Slide 3: Weapon Detector -->
+            <!-- Project 3: Weapon Detector -->
             <div class="swiper-slide">
               <div class="project-slide-card">
                 <div class="proj-header">
                   <span class="proj-category">YOLOv8 | PyTorch | CV</span>
-                  <a href="https://github.com/SakshiVerma-19/suspicious-object-detector" target="_blank"
-                    class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
+                  <a href="https://github.com/SakshiVerma-19/suspicious-object-detector" target="_blank" class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
                 </div>
                 <div>
                   <h3 class="proj-title">Real-Time Weapon Detector</h3>
-                  <p class="proj-desc">Fine-tuned YOLOv8N models for real-time suspicious object detection in live video
-                    feeds. Benchmarked YOLOv8n, YOLOv8m, and YOLOv5n variants using mAP metrics to find the optimal
-                    accuracy vs latency tradeoffs for edge devices.</p>
+                  <p class="proj-desc">Fine-tuned YOLOv8N models for real-time suspicious object detection in live video feeds. Benchmarked YOLOv8n, YOLOv8m, and YOLOv5n variants using mAP metrics to find the optimal accuracy vs latency tradeoffs for edge devices.</p>
                 </div>
                 <div class="proj-tags-container">
                   <span class="proj-tag">YOLOv8</span>
@@ -1476,19 +1565,16 @@
               </div>
             </div>
 
-            <!-- Project Slide 4 -->
+            <!-- Project 4: Creator Thumbnail Feedback -->
             <div class="swiper-slide">
               <div class="project-slide-card">
                 <div class="proj-header">
-                  <span class="proj-category">AI for Marketting</span>
-                  <a href="https://github.com/SakshiVerma-19/creator-feedback" target="_blank" class="proj-icon-link"
-                    aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
+                  <span class="proj-category">AI for Marketing</span>
+                  <a href="https://github.com/SakshiVerma-19/creator-feedback" target="_blank" class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
                 </div>
                 <div>
                   <h3 class="proj-title">Creator Thumbnail Feedback</h3>
-                  <p class="proj-desc">AI-powered thumbnail analysis tool that predicts viewer attention, generates
-                    engagement scores, and provides actionable design insights while keeping all creative assets private
-                    on-device. Built using Python, Streamlit, OpenCV, ONNX Runtime, DirectML, and NumPy,</p>
+                  <p class="proj-desc">AI-powered thumbnail analysis tool that predicts viewer attention, generates engagement scores, and provides actionable design insights while keeping all creative assets private on-device. Built using Python, Streamlit, OpenCV, ONNX Runtime, DirectML, and NumPy.</p>
                 </div>
                 <div class="proj-tags-container">
                   <span class="proj-tag">OpenCV</span>
@@ -1499,20 +1585,16 @@
               </div>
             </div>
 
-            <!-- Project Slide 5 -->
+            <!-- Project 5: BiteSmart -->
             <div class="swiper-slide">
               <div class="project-slide-card">
                 <div class="proj-header">
-                  <span class="proj-category">Computer Vision | Deep Learning</span>
-                  <a href="https://github.com/SakshiVerma-19/BiteSmart" target="_blank" class="proj-icon-link"
-                    aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
+                  <span class="proj-category">CV | Deep Learning</span>
+                  <a href="https://github.com/SakshiVerma-19/BiteSmart" target="_blank" class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
                 </div>
                 <div>
                   <h3 class="proj-title">BiteSmart</h3>
-                  <p class="proj-desc">AI-powered Indian food analyzer that identifies dishes from images, estimates
-                    nutritional values, and provides personalized health scores based on your fitness goals. It also
-                    suggests healthier food alternatives and calorie-saving swaps to help users make informed dietary
-                    choices.</p>
+                  <p class="proj-desc">AI-powered Indian food analyzer that identifies dishes from images, estimates nutritional values, and provides personalized health scores based on your fitness goals. It also suggests healthier food alternatives and calorie-saving swaps.</p>
                 </div>
                 <div class="proj-tags-container">
                   <span class="proj-tag">Gemini API</span>
@@ -1523,19 +1605,16 @@
               </div>
             </div>
 
+            <!-- Project 6: Student Performance Predictor -->
             <div class="swiper-slide">
               <div class="project-slide-card">
                 <div class="proj-header">
-                  <span class="proj-category">Classification | Deep Learning</span>
-                  <a href="https://github.com/SakshiVerma-19/student-performance-predictor" target="_blank"
-                    class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
+                  <span class="proj-category">ML | Classification</span>
+                  <a href="https://github.com/SakshiVerma-19/student-performance-predictor" target="_blank" class="proj-icon-link" aria-label="View Project Repo"><i class="fa-brands fa-github"></i></a>
                 </div>
                 <div>
                   <h3 class="proj-title">Student Performance Predictor</h3>
-                  <p class="proj-desc">an interactive machine learning application that predicts whether a student is
-                    likely to pass or fail based on factors such as study time, absences, parental education, academic
-                    history, and support systems. It uses a Random Forest model to provide quick, data-driven insights
-                    through an intuitive web interface.</p>
+                  <p class="proj-desc">An interactive machine learning application that predicts whether a student is likely to pass or fail based on factors such as study time, absences, parental education, academic history, and support systems. It uses a Random Forest model.</p>
                 </div>
                 <div class="proj-tags-container">
                   <span class="proj-tag">Random Forest</span>
@@ -1547,36 +1626,34 @@
             </div>
 
           </div>
-
-          <!-- Hidden Pagination / Navigation for marquee style -->
+          
           <div class="swiper-pagination"></div>
         </div>
-        <!-- Navigation Arrows (placed outside swiper to prevent clipping) -->
+        <!-- Navigation Arrows -->
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
       </div>
-
+      
     </div>
   </section>
 
-  <!-- 6. CONTACT SECTION -->
+  <!-- CONTACT SECTION -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title">Get in <span>Touch</span></h2>
-
+      
       <div class="contact-wrapper">
         <div class="contact-card">
           <!-- Left Column: Info & Details -->
           <div class="contact-info-col">
             <h3 class="contact-subtitle">Let's Connect!</h3>
             <p class="contact-text">
-              I am open to new opportunities, collaborations, and discussions about AI/ML, computer vision, and software
-              engineering. Reach out via email, phone, or connect with me on social platforms!
+              I am open to new opportunities, collaborations, and discussions about AI/ML, computer vision, and software engineering. Reach out via email, phone, or connect with me on social platforms!
             </p>
-
+            
             <div class="contact-details-list">
               <!-- Email -->
-              <a href="mailto:sakshi.ve@outlook.com" class="contact-detail-link">
+              <a href="mailto:sakshii.builds@gmail.com" class="contact-detail-link">
                 <div class="contact-detail-icon">
                   <i class="fa-regular fa-envelope"></i>
                 </div>
@@ -1585,36 +1662,32 @@
                   <span class="contact-detail-val">sakshii.builds@gmail.com</span>
                 </div>
               </a>
-
-
-              <div class="contact-actions-row">
-                <!-- Social Icons -->
-                <div class="social-row" style="margin-bottom: 0;">
-                  <a href="https://linkedin.com/in/sakshivermasv" target="_blank" class="social-icon"
-                    aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
-                  <a href="https://github.com/SakshiVerma-19" target="_blank" class="social-icon"
-                    aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-                  <a href="https://sakshiverma19-portfolio.vercel.app/" target="_blank" class="social-icon"
-                    aria-label="Personal Portfolio"><i class="fa-solid fa-globe"></i></a>
-                  <a href="https://sakshive.wordpress.com/" target="_blank" class="social-icon"
-                    aria-label="Personal Blog"><i class="fa-solid fa-pencil"></i></a>
-                </div>
-
-                <!-- Resume Button -->
-                <a href="assets/sakshi-resume.pdf" class="pill-btn pill-btn-solid">Download Resume</a>
-              </div>
             </div>
-
-            <!-- Right Column: Picture -->
-            <div class="contact-image-col">
-              <div class="contact-nebula"></div>
-              <div class="contact-portrait-frame">
-                <img src="sakshi.png" alt="Sakshi Verma Portrait" class="contact-portrait-image" />
+            
+            <div class="contact-actions-row">
+              <!-- Social Icons -->
+              <div class="social-row" style="margin-bottom: 0;">
+                <a href="https://linkedin.com/in/sakshivermasv" target="_blank" class="social-icon" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/SakshiVerma-19" target="_blank" class="social-icon" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                <a href="https://sakshiverma19-portfolio.vercel.app/" target="_blank" class="social-icon" aria-label="Personal Portfolio"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://sakshive.wordpress.com/" target="_blank" class="social-icon" aria-label="Personal Blog"><i class="fa-solid fa-pencil"></i></a>
               </div>
+              
+              <!-- Resume Button -->
+              <a href="assets/sakshi-resume.pdf" class="pill-btn pill-btn-solid">Download Resume</a>
+            </div>
+          </div>
+          
+          <!-- Right Column: Picture -->
+          <div class="contact-image-col">
+            <div class="contact-nebula"></div>
+            <div class="contact-portrait-frame">
+              <img src="assets/sakshi.png" alt="Sakshi Verma Portrait" class="contact-portrait-image" />
             </div>
           </div>
         </div>
       </div>
+    </div>
   </section>
 
   <!-- CDNs for JavaScript Frameworks -->
@@ -1626,17 +1699,18 @@
 
   <!-- Scripts Logic -->
   <script>
+
     /* =========================================================================
-       1. THREE.JS "LATENT SPACE" BACKGROUND (SQUARE INSTANCED SHAPES & BUBBLE TRACKS)
+       2. THREE.JS 3D NEURAL NETWORK BACKGROUND (Semi-transparent spheres and connections)
        ========================================================================= */
     const canvas = document.getElementById('bg-canvas');
     const container = document.getElementById('canvas-container');
 
     const scene = new THREE.Scene();
-
+    
     // Camera Setup
-    const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.z = 6;
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.z = 10;
     scene.add(camera);
 
     // Renderer Config
@@ -1649,185 +1723,66 @@
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
-    // Particle Group holding particles & bubble chamber lines
-    const starGroup = new THREE.Group();
-    scene.add(starGroup);
+    // Lights
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+    scene.add(ambientLight);
 
-    // A. SQUARE PARTICLES INITIALIZATION
-    const particleCount = 1000;
-    const squareGeo = new THREE.PlaneGeometry(0.04, 0.04); // square shape
-    const squareMat = new THREE.MeshBasicMaterial({
-      side: THREE.DoubleSide,
+    const pointLight = new THREE.PointLight(0xff007f, 1.5, 50);
+    pointLight.position.set(5, 5, 5);
+    scene.add(pointLight);
+
+    // Node configuration
+    const nodeCount = 45;
+    const nodeGeo = new THREE.SphereGeometry(0.18, 16, 16);
+    const nodeMat = new THREE.MeshPhysicalMaterial({
+      color: 0xff007f,
+      roughness: 0.1,
+      metalness: 0.1,
+      transmission: 0.6, // Glass transparency
+      opacity: 0.8,
       transparent: true,
-      opacity: 0.65,
-      blending: THREE.AdditiveBlending
+      clearcoat: 1.0,
+      clearcoatRoughness: 0.1
     });
 
-    const starField = new THREE.InstancedMesh(squareGeo, squareMat, particleCount);
-    starGroup.add(starField);
+    const nodes = [];
+    const positions = [];
+    const velocities = [];
 
-    const colorChoices = [
-      new THREE.Color('#ffffff'), // Soft white
-      new THREE.Color('#ff6954'), // Custom Coral Pink (#ff6954)
-      new THREE.Color('#a259ff'), // Violet Purple
-      new THREE.Color('#8a8f98')  // Muted Gray
-    ];
+    // Create floating nodes
+    for (let i = 0; i < nodeCount; i++) {
+      const node = new THREE.Mesh(nodeGeo, nodeMat);
+      
+      // Random coordinates inside 3D viewport cube
+      const x = (Math.random() - 0.5) * 16;
+      const y = (Math.random() - 0.5) * 10;
+      const z = (Math.random() - 0.5) * 8;
+      
+      node.position.set(x, y, z);
+      scene.add(node);
 
-    // Distribute square instances
-    const dummy = new THREE.Object3D();
-    for (let i = 0; i < particleCount; i++) {
-      dummy.position.set(
-        (Math.random() - 0.5) * 16,
-        (Math.random() - 0.5) * 16,
-        (Math.random() - 0.5) * 12
-      );
-      dummy.rotation.set(
-        Math.random() * Math.PI,
-        Math.random() * Math.PI,
-        Math.random() * Math.PI
-      );
-      dummy.scale.setScalar(0.4 + Math.random() * 0.8);
-      dummy.updateMatrix();
-      starField.setMatrixAt(i, dummy.matrix);
-
-      // Distribute colors across the particle system
-      const colorWeight = Math.random();
-      let chosenColor;
-      if (colorWeight < 0.70) {
-        chosenColor = colorChoices[0]; // Faint white dominant
-      } else if (colorWeight < 0.85) {
-        chosenColor = colorChoices[1]; // Custom Coral Pink (#ff6954)
-      } else if (colorWeight < 0.95) {
-        chosenColor = colorChoices[2]; // Deep Violet
-      } else {
-        chosenColor = colorChoices[3]; // Faint Muted
-      }
-      starField.setColorAt(i, chosenColor);
-    }
-    starField.instanceMatrix.needsUpdate = true;
-    if (starField.instanceColor) {
-      starField.instanceColor.needsUpdate = true;
+      nodes.push(node);
+      velocities.push(new THREE.Vector3(
+        (Math.random() - 0.5) * 0.015,
+        (Math.random() - 0.5) * 0.015,
+        (Math.random() - 0.5) * 0.015
+      ));
     }
 
-    // B. BUBBLE CHAMBER SUBATOMIC PARTICLE TRACKS (Connected Textures at the back)
-    const trackGroup = new THREE.Group();
-    starGroup.add(trackGroup);
-
-    // Faint overlay materials matching theme color tags
-    const trackMatPink = new THREE.LineBasicMaterial({
-      color: 0xff6954,
+    // Connect nodes with line segments
+    const lineMat = new THREE.LineBasicMaterial({
+      color: 0xff007f,
       transparent: true,
       opacity: 0.15,
       blending: THREE.AdditiveBlending
     });
 
-    const trackMatPurple = new THREE.LineBasicMaterial({
-      color: 0xa259ff,
-      transparent: true,
-      opacity: 0.15,
-      blending: THREE.AdditiveBlending
-    });
+    let lineGeometry = new THREE.BufferGeometry();
+    let lineSegments = new THREE.LineSegments(lineGeometry, lineMat);
+    scene.add(lineSegments);
 
-    const trackMatGray = new THREE.LineBasicMaterial({
-      color: 0x8a8f98,
-      transparent: true,
-      opacity: 0.12,
-      blending: THREE.AdditiveBlending
-    });
-
-    // Helper for generating Archimedean spirals
-    function addSpiral(x, y, z, turns, r, dir, mat) {
-      const points = [];
-      const steps = 150;
-      for (let i = 0; i <= steps; i++) {
-        const t = i / steps;
-        const theta = t * turns * Math.PI * 2;
-        const radius = t * r;
-        points.push(new THREE.Vector3(
-          x + Math.cos(theta) * radius * dir,
-          y + Math.sin(theta) * radius,
-          z + (t - 0.5) * 0.4
-        ));
-      }
-      const geo = new THREE.BufferGeometry().setFromPoints(points);
-      const line = new THREE.Line(geo, mat);
-      trackGroup.add(line);
-    }
-
-    // Helper for generating decay circle tracks
-    function addCircle(x, y, z, r, mat) {
-      const points = [];
-      const steps = 100;
-      for (let i = 0; i <= steps; i++) {
-        const theta = (i / steps) * Math.PI * 2;
-        points.push(new THREE.Vector3(
-          x + Math.cos(theta) * r,
-          y + Math.sin(theta) * r,
-          z
-        ));
-      }
-      const geo = new THREE.BufferGeometry().setFromPoints(points);
-      const line = new THREE.Line(geo, mat);
-      trackGroup.add(line);
-    }
-
-    // Helper for wide sweeping parabolic/hyperbolic arcs
-    function addArc(x1, y1, x2, y2, z, bend, mat) {
-      const points = [];
-      const steps = 80;
-      const dx = x2 - x1;
-      const dy = y2 - y1;
-      const dLen = Math.sqrt(dx * dx + dy * dy);
-      const nx = -dy / dLen;
-      const ny = dx / dLen;
-
-      for (let i = 0; i <= steps; i++) {
-        const t = i / steps;
-        const x = x1 + dx * t + nx * Math.sin(t * Math.PI) * bend;
-        const y = y1 + dy * t + ny * Math.sin(t * Math.PI) * bend;
-        points.push(new THREE.Vector3(x, y, z));
-      }
-      const geo = new THREE.BufferGeometry().setFromPoints(points);
-      const line = new THREE.Line(geo, mat);
-      trackGroup.add(line);
-    }
-
-    // Helper for straight horizontal collision tracks
-    function addLine(x1, y1, z1, x2, y2, z2, mat) {
-      const geo = new THREE.BufferGeometry().setFromPoints([
-        new THREE.Vector3(x1, y1, z1),
-        new THREE.Vector3(x2, y2, z2)
-      ]);
-      const line = new THREE.Line(geo, mat);
-      trackGroup.add(line);
-    }
-
-    // Generate bubble chamber track visual nodes
-    // Spirals representing magnetic fields twisting particle paths
-    addSpiral(-3.2, 2.0, -2, 4, 2.5, 1, trackMatPink);
-    addSpiral(3.5, -2.2, -3, 5, 2.0, -1, trackMatPurple);
-    addSpiral(-1.2, -1.8, -4, 3, 1.8, 1, trackMatGray);
-
-    // Concentric circle groups (decay paths)
-    addCircle(-1.5, 1.5, -3, 1.0, trackMatPurple);
-    addCircle(-1.5, 1.5, -3, 0.7, trackMatPurple);
-    addCircle(-1.5, 1.5, -3, 0.4, trackMatPurple);
-
-    addCircle(2.5, 2.0, -2, 1.2, trackMatPink);
-    addCircle(2.5, 2.0, -2, 0.8, trackMatPink);
-    addCircle(2.5, 2.0, -2, 0.4, trackMatPink);
-
-    // Intersecting straight lines and sweeping arcs
-    addArc(-8, -3, 8, 4, -4, 3.5, trackMatGray);
-    addArc(-6, -6, 6, 6, -3, -2.5, trackMatPurple);
-
-    addLine(-10, -0.5, -5, 10, -0.5, -5, trackMatGray);
-    addLine(-10, 0.5, -5, 10, 0.5, -5, trackMatGray);
-    addLine(-10, 0.0, -5, 10, 0.0, -5, trackMatPink);
-
-    // Mouse Parallax Shifting System
+    // Mouse Move Coordinates Tracking for parallax and hover glow
     const mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
-
     window.addEventListener('mousemove', (e) => {
       mouse.targetX = (e.clientX / window.innerWidth) - 0.5;
       mouse.targetY = (e.clientY / window.innerHeight) - 0.5;
@@ -1837,7 +1792,7 @@
     window.addEventListener('resize', () => {
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
-
+      
       renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     });
@@ -1846,32 +1801,56 @@
     const clock = new THREE.Clock();
 
     function animate() {
-      const time = clock.getElapsedTime();
+      // Node drifting loop
+      const linePositions = [];
+      
+      for (let i = 0; i < nodeCount; i++) {
+        const node = nodes[i];
+        const vel = velocities[i];
+        
+        node.position.add(vel);
 
-      // Rotating the entire starGroup mesh (particles and bubble lines rotate together)
-      starField.rotation.y = time * 0.012;
-      starField.rotation.x = time * 0.005;
+        // Rebound boundaries
+        if (Math.abs(node.position.x) > 9) vel.x *= -1;
+        if (Math.abs(node.position.y) > 6) vel.y *= -1;
+        if (Math.abs(node.position.z) > 5) vel.z *= -1;
 
-      trackGroup.rotation.y = time * 0.008;
-      trackGroup.rotation.x = time * 0.003;
+        // Calculate connections with other nodes
+        for (let j = i + 1; j < nodeCount; j++) {
+          const otherNode = nodes[j];
+          const dist = node.position.distanceTo(otherNode.position);
+          
+          if (dist < 3.2) {
+            linePositions.push(node.position.x, node.position.y, node.position.z);
+            linePositions.push(otherNode.position.x, otherNode.position.y, otherNode.position.z);
+          }
+        }
+      }
 
-      // Smooth mouse parallax camera lerping
+      // Update neural path lines
+      lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+      lineGeometry.computeBoundingSphere();
+
+      // Smooth mouse parallax lerp
       mouse.x += (mouse.targetX - mouse.x) * 0.05;
       mouse.y += (mouse.targetY - mouse.y) * 0.05;
 
-      camera.position.x = mouse.x * 2.5;
-      camera.position.y = -mouse.y * 2.5;
+      camera.position.x = mouse.x * 3.5;
+      camera.position.y = -mouse.y * 3.5;
       camera.lookAt(0, 0, 0);
+
+      // Dynamic hover line glow multiplier based on mouse speed/presence
+      const speed = Math.abs(mouse.targetX - mouse.x) + Math.abs(mouse.targetY - mouse.y);
+      lineMat.opacity = 0.12 + Math.min(speed * 1.5, 0.25);
 
       renderer.render(scene, camera);
       window.requestAnimationFrame(animate);
     }
-
-    // Launch WebGL Loop
+    
     animate();
 
     /* =========================================================================
-       2. NAVIGATION MENU TOGGLE & CLICK ACTIONS
+       3. NAVIGATION MENU TOGGLE
        ========================================================================= */
     const menuBtn = document.getElementById('menu-toggle-btn');
     const menuLinks = document.getElementById('nav-links-menu');
@@ -1895,52 +1874,53 @@
     });
 
     /* =========================================================================
-       3. HERO TYPED.JS TYPEWRITER LOOP
+       4. HERO TYPED.JS TYPEWRITER LOOP
        ========================================================================= */
-    var typed = new Typed('#typed-element', {
-      strings: [
-        "AI/ML Engineer.",
-        "Data Scientist.",
-        "Research Intern.",
-        "Gen AI Engineer."
-      ],
-      typeSpeed: 60,
-      backSpeed: 45,
-      backDelay: 1800,
-      loop: true
+    function initTyped() {
+      new Typed('#typed-element', {
+        strings: [
+          "AI/ML Engineer.", 
+          "AR Creator.", 
+          "Computer Vision Developer."
+        ],
+        typeSpeed: 60,
+        backSpeed: 45,
+        backDelay: 1800,
+        loop: true
+      });
+    }
+
+    /* =========================================================================
+       5. JOURNEY SCROLL REVEAL (IntersectionObserver)
+       ========================================================================= */
+    const observerOptions = {
+      root: null,
+      threshold: 0.15
+    };
+
+    const timelineObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.timeline-item').forEach(item => {
+      timelineObserver.observe(item);
     });
 
     /* =========================================================================
-       4. GSAP SCROLLTRIGGER ENGINE CONFIGS
+       6. SKILLS SECTION PROGRESS BAR ANIMATION (GSAP ScrollTrigger)
        ========================================================================= */
     gsap.registerPlugin(ScrollTrigger);
 
-    // Journey Section Milestone Timeline Reveals
-    const timelineItems = gsap.utils.toArray('.timeline-item');
-    timelineItems.forEach(item => {
-      // Fade and slide content blocks
-      gsap.fromTo(item.querySelector('.timeline-content'),
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: 'power2.out',
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 85%',
-            onEnter: () => item.classList.add('active')
-          }
-        }
-      );
-    });
-
-    // Skills Section Dynamic Progress Bar Filling
     const progressFills = gsap.utils.toArray('.progress-fill');
     progressFills.forEach(fill => {
       const finalWidth = fill.getAttribute('data-width');
-
-      gsap.fromTo(fill,
+      
+      gsap.fromTo(fill, 
         { width: '0%' },
         {
           width: finalWidth,
@@ -1956,22 +1936,27 @@
     });
 
     /* =========================================================================
-       5. PROJECTS SWIPER.JS CONTINUOUS LOOP SLIDER (Auto-swipe with navigation controls)
+       7. PROJECTS SWIPER.JS INFINITE SLIDER
        ========================================================================= */
     const swiper = new Swiper('.projects-swiper', {
       loop: true,
-      rewind: true,
+      rewind: false,
       slidesPerView: 3,
       spaceBetween: 30,
-      speed: 500,
+      speed: 600,
       autoplay: {
-        delay: 2000,
+        delay: 2500,
         disableOnInteraction: false,
         pauseOnMouseEnter: true
       },
       navigation: {
         nextEl: '.projects-container .swiper-button-next',
         prevEl: '.projects-container .swiper-button-prev',
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true
       },
       breakpoints: {
         320: {
