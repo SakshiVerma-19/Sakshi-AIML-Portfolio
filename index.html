@@ -14,7 +14,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200..800&family=Dokdo&family=DynaPuff:wght@400..700&family=Freckle+Face&family=MuseoModerno:ital@0;1&family=Niconne&family=Oswald:wght@200..700&family=Ruda:wght@400..900&display=swap" rel="stylesheet">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,9 +36,19 @@
       --accent-purple: #cd72f4;
       --accent-purple-gradient: linear-gradient(135deg, #a259ff, #5d2bcf);
       --progress-bar-gradient: linear-gradient(90deg, #ff007f, #a259ff);
-      --font-title: 'Poppins', sans-serif;
-      --font-body: 'Inter', sans-serif;
-      --font-mono: 'Fira Code', monospace;
+      --font-title: 'Oswald', sans-serif;
+      --font-body: 'Ruda', sans-serif;
+      --font-mono: 'Changa', sans-serif;
+      
+      /* Additional imported fonts */
+      --font-changa: 'Changa', sans-serif;
+      --font-dokdo: 'Dokdo', system-ui;
+      --font-dynapuff: 'DynaPuff', system-ui;
+      --font-freckle: 'Freckle Face', system-ui;
+      --font-museo: 'MuseoModerno', sans-serif;
+      --font-niconne: 'Niconne', cursive;
+      --font-oswald: 'Oswald', sans-serif;
+      --font-ruda: 'Ruda', sans-serif;
       --glass-bg: rgba(10, 10, 10, 0.65);
       --glass-border: rgba(255, 255, 255, 0.08);
       --pink-glow: 0 0 15px rgba(255, 0, 127, 0.6), 0 0 30px rgba(255, 0, 127, 0.2);
@@ -283,6 +293,7 @@
 
     .lr-slider {
       -webkit-appearance: none;
+      appearance: none;
       width: 100%;
       height: 6px;
       border-radius: 3px;
@@ -1292,14 +1303,14 @@
           <div class="social-row">
             <a href="https://linkedin.com/in/sakshivermasv" target="_blank" class="social-icon" aria-label="LinkedIn Profile"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="https://github.com/SakshiVerma-19" target="_blank" class="social-icon" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
-            <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="YouTube Channel"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com//sakshi.space" target="_blank" class="social-icon" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://youtube.com//_sakshive_" target="_blank" class="social-icon" aria-label="YouTube Channel"><i class="fa-brands fa-youtube"></i></a>
+            <a href="mailto:sakshii.builds@gmail.com" class="social-icon" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
           </div>
           
           <!-- Action Button Pills -->
           <div class="btn-row">
             <a href="assets/sakshi-resume.pdf" class="pill-btn pill-btn-outline">Download Resume</a>
-            <a href="#contact" class="pill-btn pill-btn-solid">Contact</a>
             <a href="https://sakshive.wordpress.com/" target="_blank" class="pill-btn pill-btn-outline">Read my blog</a>
           </div>
         </div>
@@ -1308,7 +1319,7 @@
         <div class="hero-media">
           <div class="nebula-bg"></div>
           <div class="portrait-frame">
-            <img src="sakshi.png" alt="Sakshi Verma Portrait Avatar" class="portrait-image" />
+            <img src="assets/sakshi.png" alt="Sakshi Verma Portrait Avatar" class="portrait-image" />
           </div>
         </div>
 
@@ -1420,6 +1431,16 @@
             <div class="progress-label-row"><span>R</span><span>80%</span></div>
             <div class="progress-track"><div class="progress-fill" data-width="80%"></div></div>
           </div>
+          
+          <div class="progress-item">
+            <div class="progress-label-row"><span>Java</span><span>70%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="70%"></div></div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label-row"><span>C++</span><span>70%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="70%"></div></div>
+          </div>
         </div>
 
         <!-- Card 2: AI/ML Frameworks -->
@@ -1445,6 +1466,11 @@
             <div class="progress-label-row"><span>HuggingFace</span><span>88%</span></div>
             <div class="progress-track"><div class="progress-fill" data-width="88%"></div></div>
           </div>
+          
+          <div class="progress-item">
+            <div class="progress-label-row"><span>Gemini/Claude API</span><span>60%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="60%"></div></div>
+          </div>
         </div>
 
         <!-- Card 3: Databases & Visualizations -->
@@ -1467,7 +1493,17 @@
           </div>
           
           <div class="progress-item">
+            <div class="progress-label-row"><span>Tableau</span><span>85%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
+          </div>
+          
+          <div class="progress-item">
             <div class="progress-label-row"><span>Matplotlib</span><span>85%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label-row"><span>Seaborn</span><span>85%</span></div>
             <div class="progress-track"><div class="progress-fill" data-width="85%"></div></div>
           </div>
         </div>
@@ -1488,6 +1524,11 @@
           
           <div class="progress-item">
             <div class="progress-label-row"><span>Docker</span><span>80%</span></div>
+            <div class="progress-track"><div class="progress-fill" data-width="80%"></div></div>
+          </div>
+          
+          <div class="progress-item">
+            <div class="progress-label-row"><span>Cloud (AWS, GCP, Azure)</span><span>80%</span></div>
             <div class="progress-track"><div class="progress-fill" data-width="80%"></div></div>
           </div>
         </div>
@@ -1681,13 +1722,13 @@
                 <a href="assets/sakshi-resume.pdf" class="pill-btn pill-btn-solid">Download Resume</a>
               </div>
             </div>
+          </div>
 
-            <!-- Right Column: Picture -->
-            <div class="contact-image-col">
-              <div class="contact-nebula"></div>
-              <div class="contact-portrait-frame">
-                <img src="sakshi.png" alt="Sakshi Verma Portrait" class="contact-portrait-image" />
-              </div>
+          <!-- Right Column: Picture -->
+          <div class="contact-image-col">
+            <div class="contact-nebula"></div>
+            <div class="contact-portrait-frame">
+              <img src="assets/sakshi.png" alt="Sakshi Verma Portrait" class="contact-portrait-image" />
             </div>
           </div>
         </div>
@@ -1885,7 +1926,8 @@
         strings: [
           "AI/ML Engineer.", 
           "AR Creator.", 
-          "Computer Vision Developer."
+          "Computer Vision Enthusiast.",
+          "Gen AI Engineer."
         ],
         typeSpeed: 60,
         backSpeed: 45,
@@ -1893,6 +1935,7 @@
         loop: true
       });
     }
+    initTyped();
 
     /* =========================================================================
        5. JOURNEY SCROLL REVEAL (IntersectionObserver)
@@ -1928,7 +1971,7 @@
         { width: '0%' },
         {
           width: finalWidth,
-          duration: 1.5,
+          duration: 1.0,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: '#skills',
